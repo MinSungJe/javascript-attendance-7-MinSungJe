@@ -6,6 +6,8 @@ const Comment = Object.freeze({
 Q. 종료\n`,
   NICKNAME_INPUT: '닉네임을 입력해 주세요.\n',
   TIME_INPUT: '등교 시간을 입력해 주세요.\n',
+  DAY_INPUT: '수정하려는 날짜(일)를 입력해 주세요.\n',
+  MODIFY_TIME_INPUT: '언제로 변경하겠습니까?\n',
   OUTPUT: '뭔가를 안내하고 싶습니다.',
 });
 

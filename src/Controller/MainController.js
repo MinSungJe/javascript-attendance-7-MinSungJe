@@ -7,14 +7,15 @@ import validateIsNotDay from '../Util/validateIsNotDay.js';
 import InputView from '../View/InputView.js';
 import OutputView from '../View/OutputView.js';
 import ConfirmController from './ConfirmController.js';
+import ModifyController from './ModifyController.js';
 
 class MainController {
   async run(attendList) {
     while (true) {
       const input = await this.getUserInput();
+      OutputView.printBlank();
 
       if (input === 'Q') break;
-      OutputView.printBlank();
       if (input === '1') {
         const today = DateTimes.now();
         validateIsNotDay(today.getDate(), today.getDay());
@@ -22,6 +23,14 @@ class MainController {
         await confirmController.run(attendList);
       }
       if (input === '2') {
+        const modifyController = new ModifyController();
+        await modifyController.run(attendList);
+      }
+      if (input === '3') {
+        OutputView.printMessage('미구현');
+      }
+      if (input === '4') {
+        OutputView.printMessage('미구현');
       }
     }
   }

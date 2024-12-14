@@ -17,13 +17,13 @@ class ConfirmController {
   async getConfirmService(attendList) {
     const input = await InputView.readNickname();
     const nicknameList = attendList.map((attendance) => attendance.nickname);
-    this.#validate(input, nicknameList);
+    this.#validateNickname(input, nicknameList);
     const attendance = attendList.find((attendance) => (attendance.nickname = input));
     const attendConfirmService = new AttendConfirmService(attendance, nicknameList);
     return attendConfirmService;
   }
 
-  #validate(nickname, nicknameList) {
+  #validateNickname(nickname, nicknameList) {
     if (!ListChecker.isIncludesValue(nicknameList, nickname)) throwError(ErrorMessage.NO_NICKNAME);
   }
 }

@@ -14,12 +14,24 @@ const InputView = {
     const input = await Console.readLineAsync(Comment.INPUT);
     return input;
   },
+
   async readNickname() {
     const input = await Console.readLineAsync(Comment.NICKNAME_INPUT);
     return input;
   },
+
   async readTime() {
     const input = await Console.readLineAsync(Comment.TIME_INPUT);
+    return input;
+  },
+
+  async readModifyTime() {
+    const input = await Console.readLineAsync(Comment.MODIFY_TIME_INPUT);
+    return input;
+  },
+
+  async readDay() {
+    const input = await Console.readLineAsync(Comment.DAY_INPUT);
     return input;
   },
 };
