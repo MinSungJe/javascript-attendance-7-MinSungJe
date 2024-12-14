@@ -15,10 +15,10 @@ class MainController {
       const input = await this.getUserInput();
       OutputView.printBlank();
 
-      if (input === 'Q') break;
+      if (input === 'Q' || input === 'q') break;
       if (input === '1') {
         const today = DateTimes.now();
-        validateIsNotDay(today.getDate(), today.getDay());
+        validateIsNotDay(today.getDate());
         const confirmController = new ConfirmController();
         await confirmController.run(attendList);
       }
