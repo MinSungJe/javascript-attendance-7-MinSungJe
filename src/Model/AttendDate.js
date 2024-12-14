@@ -31,7 +31,7 @@ class AttendDate {
     if (this.day === 25) this.isDayOff = true;
   }
 
-  setTime(timeString) {
+  setAttendTime(timeString) {
     validateTimeString(timeString);
     this.time = timeString;
   }

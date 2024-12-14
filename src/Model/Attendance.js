@@ -38,6 +38,10 @@ class Attendance {
     return DATE_LIST[(day + 5) % 7];
   }
 
+  getAttendanceByDate(month, day) {
+    return this.dateList.find((date) => date.month === month && date.day === day);
+  }
+
   #validateDatetime(datetime) {
     const dateTimeInfo = datetime.split(' ');
     if (dateTimeInfo.length !== 2) throwError(ErrorMessage.INVALID_INPUT);

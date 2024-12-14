@@ -41,7 +41,7 @@ describe('AttendDate 클래스 테스트', () => {
     [12, 2, '화', '14:31', '결석'],
   ])('시간을 설정한 경우 출석 여부를 체크할 수 있다.', (month, day, date, time, result) => {
     const attendDate = new AttendDate(month, day, date);
-    attendDate.setTime(time);
+    attendDate.setAttendTime(time);
     expect(attendDate.getAttendInfo()).toBe(result);
   });
 
@@ -51,7 +51,7 @@ describe('AttendDate 클래스 테스트', () => {
     [12, 2, '월', '13:31', '12월 02일 월요일 13:31 (결석)'],
   ])('시간 정보에 대해 string으로 정리가 가능하다.', (month, day, date, time, result) => {
     const attendDate = new AttendDate(month, day, date);
-    attendDate.setTime(time);
+    attendDate.setAttendTime(time);
     expect(attendDate.getPrintInfo()).toBe(result);
   });
 });
