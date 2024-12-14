@@ -3,6 +3,7 @@ import ErrorMessage from '../Constant/ErrorMessage.js';
 import throwError from '../Util/throwError.js';
 import validateTimeString from '../Util/validateTimeString.js';
 import { ListChecker } from './Checkers.js';
+import OutputView from '../View/OutputView.js';
 
 class AttendConfirmService {
   attendance;
@@ -23,6 +24,7 @@ class AttendConfirmService {
     const attendDate = this.attendance.getAttendanceByDate(today.getMonth() + 1, today.getDate());
     if (attendDate.time !== '--:--') throwError(ErrorMessage.ALREADY_ATTEND);
     attendDate.setAttendTime(time);
+    OutputView.printConfirmAttend(attendDate);
   }
 }
 
