@@ -7,6 +7,7 @@ describe('StringChecker 함수 객체 테스트', () => {
     ['10', true],
     ['-1', true],
     ['0', true],
+    ['00', true],
   ])('주어진 string이 숫자(Number)값인지 확인', (input, result) => {
     expect(StringChecker.isNumberString(input)).toBe(result);
   });

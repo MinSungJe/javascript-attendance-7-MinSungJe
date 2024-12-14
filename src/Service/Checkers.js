@@ -1,7 +1,7 @@
 export const StringChecker = {
   // string으로 주어진 숫자가 Number인지 확인
   isNumberString: (string) => {
-    return !!Number(string) || string === '0';
+    return !!Number(string) || string === '0' || string === '00';
   },
 
   // string이 정규식을 만족하는지 확인
