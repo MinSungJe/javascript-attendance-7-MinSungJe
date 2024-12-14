@@ -31,7 +31,7 @@ class AttendModifyService {
     if (day > today.getDate()) throwError(ErrorMessage.UNABLE_MODIFY);
     const dateInfo = this.attendance.getAttendanceByDate(12, day);
     if (dateInfo.isDayOff)
-      throwError(`12월 ${day}일 ${DATE_LIST[(day + 5) % 7]}요일은 등교일이 아닙니다.`);
+      throwError(`12월 ${day}일 ${DATE_LIST[(day + 5) % 7]}요일은 등교하는 날이 아닙니다.`);
   }
 
   modifyAttendance(time) {

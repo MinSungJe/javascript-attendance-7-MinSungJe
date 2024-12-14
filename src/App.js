@@ -3,24 +3,24 @@ import Attendance from './Model/Attendance.js';
 import loadFromPublic from './Util/loadFromPublic.js';
 
 class App {
-  AttendanceList = [];
+  attendanceList = [];
 
   async run() {
     this.#init();
     const mainController = new MainController();
-    await mainController.run();
+    await mainController.run(this.attendanceList);
   }
 
   #init() {
     this.#getCSVData();
-    const nicknameSet = new Set(this.AttendanceList.map((data) => data.nickname));
+    const nicknameSet = new Set(this.attendanceList.map((data) => data.nickname));
     const nicknameList = [...nicknameSet];
-    this.AttendanceList = nicknameList.map((nickname) => new Attendance(nickname));
+    this.attendanceList = nicknameList.map((nickname) => new Attendance(nickname));
   }
 
   #getCSVData() {
     const data = loadFromPublic();
-    this.AttendanceList = data;
+    this.attendanceList = data;
   }
 }
 
