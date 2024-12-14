@@ -27,7 +27,7 @@ class AttendDate {
   }
 
   #setIsDayOff() {
-    if (!ListChecker.isIncludesValue(this.date, WEEKDAY_LIST)) this.isDayOff = true;
+    if (!ListChecker.isIncludesValue(WEEKDAY_LIST, this.date)) this.isDayOff = true;
     if (this.day === 25) this.isDayOff = true;
   }
 
