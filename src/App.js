@@ -1,3 +1,4 @@
+import MainController from './Controller/MainController.js';
 import Attendance from './Model/Attendance.js';
 import loadFromPublic from './Util/loadFromPublic.js';
 
@@ -6,7 +7,8 @@ class App {
 
   async run() {
     this.#init();
-    console.log(this.AttendanceList);
+    const mainController = new MainController();
+    await mainController.run();
   }
 
   #init() {
